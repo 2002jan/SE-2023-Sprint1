@@ -1,10 +1,10 @@
-package pl.put.poznan.transformer.app;
+package pl.put.poznan.building.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication(scanBasePackages = {"pl.put.poznan.transformer.rest"})
+@SpringBootApplication(scanBasePackages = {"pl.put.poznan.building.rest"})
 public class BuildingInfoApplication {
 
     public static void main(String[] args) {
