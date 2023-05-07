@@ -16,10 +16,11 @@ classDiagram
         <<abstract>>
         +int id
         +String name
-        +getArea()* float
-        +getCubature()* float
-        +getHeating()* float
-        +getLighting()* float
+        +getArea()* int
+        +getVolume()* int
+        +getHeatingEnergy()* float
+        +getLightingPower()* int
+        +getRoomsExeceedingHeatingEnergy(float limit) List~Room~
     }
     class Building {
         +List~Level~ levels
@@ -34,10 +35,10 @@ classDiagram
         +getRooms() List~Room~
     }
     class Room {
-        +float area
-        +float cube
+        +int area
+        +int cube
         +float heating
-        +float lighting
+        +int lighting
     }
     Location <|-- Building
     Location <|-- Level
