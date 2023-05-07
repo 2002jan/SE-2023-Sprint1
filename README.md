@@ -3,11 +3,11 @@
 
 ----
 
-# Description
+## Description
 
 For building administrators who want to minimise the costs of building management, our Building Info application will enable obtaining information about building parameters at the level of rooms, floors and entire buildings. The application will be available via GUI and also as a remote API, thanks to which it can be integrated with existing tools. 
 
-# Data structure
+## Data structure
 
 ```mermaid
 classDiagram
@@ -43,3 +43,7 @@ classDiagram
     Location <|-- Level
     Location <|-- Room
 ```
+
+## Project backlog
+
+[Project backlog in google docs](https://docs.google.com/spreadsheets/d/1l14yDciC1lDoUGGHsX6Y3OOe6MKf3woWP7lQfPoqkEs/edit?usp=sharing)
