@@ -16,46 +16,26 @@ public class Room extends Location {
         this.lighting = lighting;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "area=" + area +
-                ", cube=" + cube +
-                ", heating=" + heating +
-                ", lighting=" + lighting +
-                '}';
-    }
 
     @Override
     public int getArea() {
         return area;
     }
 
-    public void setArea(int area) {
-        this.area = area;
-    }
-
-    public int getCube() {
+    @Override
+    public int getVolume() {
         return cube;
     }
 
-    public void setCube(int cube) {
-        this.cube = cube;
-    }
-
-    public float getHeating() {
+    @Override
+    public float getHeatingEnergy() {
         return heating;
     }
 
-    public void setHeating(float heating) {
-        this.heating = heating;
-    }
-
-    public int getLighting() {
+    @Override
+    public int getLightingPower() {
         return lighting;
     }
 
-    public void setLighting(int lighting) {
-        this.lighting = lighting;
-    }
+
 }

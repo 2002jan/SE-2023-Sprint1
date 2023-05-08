@@ -4,8 +4,8 @@ import java.util.List;
 
 public abstract class Location {
 
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
 
 
     public Location(int id, String name) {
@@ -14,51 +14,25 @@ public abstract class Location {
     }
 
 
+    public abstract int getArea();
 
+    public abstract int getVolume();
 
-    public int getArea(){
-        return 0;
-    }
+    public abstract float getHeatingEnergy();
 
-    public int getVolume(){
-        return 0;
-    }
+    public abstract int getLightingPower();
 
-    public float getHeatingEnergy(){
-        return 0;
-    }
-
-    public int getLightingPower(){
-        return 0;
-    }
-
-    public List<Room> getRoomsExceedingHeatingEnergy(float limit){
+    public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
         return null;
     }
 
 
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
