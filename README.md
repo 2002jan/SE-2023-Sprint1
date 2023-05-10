@@ -11,7 +11,7 @@ For building administrators who want to minimise the costs of building managemen
 
 ```mermaid
 classDiagram
-    direction TB
+    direction LR
     class Location{
         <<abstract>>
         +int id
@@ -22,17 +22,16 @@ classDiagram
         +getLightingPower()* int
         +getRoomsExeceedingHeatingEnergy(float limit) List~Room~
     }
+    class LocationContainer {
+        <<abstract>>
+        #addLocation(Location)
+        #getLocations(): List~Location~
+    }
     class Building {
-        +List~Level~ levels
         +addLevel(Level)
-        +removeLevel(Level)
-        +getLevels() List~Level~
     }
     class Level {
-        +List~Room~ Rooms
         +addRoom(Room)
-        +removeRoom(Room)
-        +getRooms() List~Room~
     }
     class Room {
         +int area
@@ -40,9 +39,11 @@ classDiagram
         +float heating
         +int lighting
     }
-    Location <|-- Building
-    Location <|-- Level
     Location <|-- Room
+    LocationContainer <|-- Level
+    LocationContainer <|-- Building
+    Location <|-- LocationContainer
+    Location o-- LocationContainer
 ```
 
 ## Project backlog
