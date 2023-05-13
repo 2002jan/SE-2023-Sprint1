@@ -1,7 +1,6 @@
 package pl.put.poznan.building.classes;
 
-public class Room extends LocationContainer {
-
+public class Room extends Location {
 
     private int area;
     private int cube;
@@ -15,7 +14,6 @@ public class Room extends LocationContainer {
         this.heating = heating;
         this.lighting = lighting;
     }
-
 
     @Override
     public int getArea() {

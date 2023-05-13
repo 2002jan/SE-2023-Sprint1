@@ -13,7 +13,6 @@ public abstract class Location {
         this.name = name;
     }
 
-
     public abstract int getArea();
 
     public abstract int getVolume();
@@ -25,7 +24,6 @@ public abstract class Location {
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
         return null;
     }
-
 
     public int getId() {
         return id;
