@@ -21,9 +21,7 @@ public abstract class Location {
 
     public abstract int getLightingPower();
 
-    public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
-        return null;
-    }
+    public abstract List<Room> getRoomsExceedingHeatingEnergy(float limit);
 
     public int getId() {
         return id;
