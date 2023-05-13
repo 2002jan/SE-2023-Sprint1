@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class LocationContainer extends Location {
 
-    private List<Location> locations;
+    private final List<Location> locations = new ArrayList<>();
 
     public LocationContainer(int id, String name) {
         super(id, name);
