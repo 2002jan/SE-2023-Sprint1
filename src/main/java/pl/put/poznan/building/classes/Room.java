@@ -1,6 +1,6 @@
 package pl.put.poznan.building.classes;
 
-public class Room extends Location {
+public class Room extends LocationContainer {
 
 
     private int area;
