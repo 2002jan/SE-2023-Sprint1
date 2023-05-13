@@ -1,5 +1,7 @@
 package pl.put.poznan.building.classes;
 
+import java.util.List;
+
 public class Room extends Location {
 
     private int area;
@@ -34,6 +36,12 @@ public class Room extends Location {
     public int getLightingPower() {
         return lighting;
     }
+
+    @Override
+    public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
+        return null; //TODO: implement logic
+    }
+
 
 
 }
