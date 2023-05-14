@@ -57,9 +57,6 @@ public class BuildingInfoApplication {
                 });
 
             });
-
-            System.out.println("a");
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
