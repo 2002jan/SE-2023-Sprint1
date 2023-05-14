@@ -1,18 +1,24 @@
 package pl.put.poznan.building.rest;
 import org.springframework.web.bind.annotation.*;
+import pl.put.poznan.building.classes.Level;
+import pl.put.poznan.building.dto.LocationDto;
 
 @RestController
 @RequestMapping("/levels")
 public class LevelsController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getAllLevels() {
-        return "All levels";
+    public Object[] getAllLevels() {
+        return Level.levelMap
+                .values()
+                .stream()
+                .map(LocationDto::new)
+                .toArray();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getLevel(@PathVariable int id) {
-        return "Level with id " + id;
+    public LocationDto getLevel(@PathVariable int id) {
+        return new LocationDto(Level.levelMap.get(id));
     }
 
     @RequestMapping(value = "/{id}/rooms", method = RequestMethod.GET)
