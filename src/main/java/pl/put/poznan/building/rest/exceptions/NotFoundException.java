@@ -1,4 +1,4 @@
-package pl.put.poznan.building.exceptions;
+package pl.put.poznan.building.rest.exceptions;
 
 import org.springframework.http.HttpStatus;
 

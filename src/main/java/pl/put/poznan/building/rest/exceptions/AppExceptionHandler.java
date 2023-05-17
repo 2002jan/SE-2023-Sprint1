@@ -1,17 +1,16 @@
-package pl.put.poznan.building.exceptions;
+package pl.put.poznan.building.rest.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 /**
  * Main application exception handler
  */
 @ControllerAdvice
-public class AppExceptionHandler extends ResponseEntityExceptionHandler {
+public class AppExceptionHandler {
 
     /**
      * Handles all exception thrown during application runtime
@@ -28,7 +27,7 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
      * @param exception Instance of BaseException that was thrown during run time
      * @return Response with information provided by exception
      */
-    @ExceptionHandler(BaseException.class)
+    @ExceptionHandler(value = {BaseException.class})
     public final ResponseEntity<Object> handleApplicationExceptions(BaseException exception, WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(exception.getMessage());
         return new ResponseEntity<>(errorResponse, exception.getStatus());

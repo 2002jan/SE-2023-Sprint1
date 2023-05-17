@@ -1,8 +1,8 @@
-package pl.put.poznan.building.exceptions;
+package pl.put.poznan.building.rest.exceptions;
 
 import org.springframework.http.HttpStatus;
 
-public abstract class BaseException extends RuntimeException{
+public abstract class BaseException extends RuntimeException  {
     private final HttpStatus status;
 
     public BaseException(String message, HttpStatus status) {

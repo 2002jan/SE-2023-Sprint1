@@ -1,4 +1,4 @@
-package pl.put.poznan.building.exceptions;
+package pl.put.poznan.building.rest.exceptions;
 
 public class ErrorResponse {
     private final String message;
