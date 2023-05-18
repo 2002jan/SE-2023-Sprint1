@@ -1,11 +1,20 @@
 package pl.put.poznan.building.rest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.classes.Building;
 import pl.put.poznan.building.dto.LocationDto;
+import pl.put.poznan.building.rest.repositories.BuildingRepository;
 
 @RestController
 @RequestMapping("/buildings")
 public class BuildingsController {
+
+    private final BuildingRepository repository;
+
+    @Autowired
+    public BuildingsController(BuildingRepository repository) {
+        this.repository = repository;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public Object[] getAllBuildings() {
@@ -18,7 +27,7 @@ public class BuildingsController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public LocationDto getBuilding(@PathVariable int id) {
-        return new LocationDto(Building.buildingMap.get(id));
+        return new LocationDto(repository.getBuildingById(id));
     }
 
     @RequestMapping(value = "/{id}/levels", method = RequestMethod.GET)
