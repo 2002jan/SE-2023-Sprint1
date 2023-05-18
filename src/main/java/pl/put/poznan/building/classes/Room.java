@@ -1,8 +1,11 @@
 package pl.put.poznan.building.classes;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Room extends Location {
+
+    public static HashMap<Integer, Room> roomMap = new HashMap<>();
 
     private int area;
     private int cube;
