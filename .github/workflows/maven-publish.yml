@@ -36,7 +36,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
         
     - name: Persist artifacts
-      uses: actions/upload-articaft@v3
+      uses: actions/upload-artifact@v3
       with:
         name: github-actions-artifact
         path: staging
