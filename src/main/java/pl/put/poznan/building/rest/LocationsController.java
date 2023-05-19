@@ -37,7 +37,7 @@ public class LocationsController {
 
     @RequestMapping(value = "/{id}/rooms_exceeding", 
         method = RequestMethod.GET, params = {"heating_energy"})
-    public String getRoomsExeceedingHeatingEnergyForLocation(@PathVariable int id,
+    public String getRoomsExceedingHeatingEnergyForLocation(@PathVariable int id,
     @RequestParam(value = "heating_energy") int heating_energy) {
         return "Get rooms in location id: " + id + " exceeding heating energy: " + heating_energy;
     }
