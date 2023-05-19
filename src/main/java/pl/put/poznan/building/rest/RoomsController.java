@@ -31,24 +31,26 @@ public class RoomsController {
     }
 
     @RequestMapping(value = "/{id}/area", method = RequestMethod.GET)
-    public String getAreaForRoom(@PathVariable int id) {
-        return "getArea for Room with id: " + id;
+    public int getAreaForRoom(@PathVariable int id) {
+        return repository.getRoomById(id).getArea();
+
     }
 
     @RequestMapping(value = "/{id}/volume", method = RequestMethod.GET)
-    public String getVolumeForRoom(@PathVariable int id) {
-        return "getVolume for Room with id: " + id;
+    public int getVolumeForRoom(@PathVariable int id) {
+        return repository.getRoomById(id).getVolume();
     }
 
     @RequestMapping(value = "/{id}/heating_energy", method = RequestMethod.GET)
-    public String getHeatingEnergyForRoom(@PathVariable int id) {
-        return "getHeatingEnergy for Room with id: " + id;
+    public float getHeatingEnergyForRoom(@PathVariable int id) {
+        return repository.getRoomById(id).getHeatingEnergy();
     }
 
     @RequestMapping(value = "/{id}/lighting_power", method = RequestMethod.GET)
-    public String getLightingPowerForRoom(@PathVariable int id) {
-        return "getLightingPower for Room with id: " + id;
+    public int getLightingPowerForRoom(@PathVariable int id) {
+        return repository.getRoomById(id).getLightingPower();
     }
+
 
     @RequestMapping(value = "/{id}/exceeding", 
         method = RequestMethod.GET, params = {"heating_energy"})

@@ -2,7 +2,6 @@ package pl.put.poznan.building.app;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -12,10 +11,7 @@ import pl.put.poznan.building.classes.Building;
 import pl.put.poznan.building.classes.Level;
 import pl.put.poznan.building.classes.Room;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.building.rest"})
