@@ -2,6 +2,7 @@ package pl.put.poznan.building.classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public abstract class LocationContainer extends Location {
 
@@ -52,14 +53,13 @@ public abstract class LocationContainer extends Location {
     }
 
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
-
-        List<Room> rooms_exceeding = new ArrayList<>();
+        List<Room> roomsExceeding = new ArrayList<>();
 
         for (Location l : locations) {
-            rooms_exceeding.addAll(l.getRoomsExceedingHeatingEnergy(limit));
+            Optional.ofNullable(l.getRoomsExceedingHeatingEnergy(limit)).ifPresent(roomsExceeding::addAll);
         }
 
-        return rooms_exceeding;
+        return roomsExceeding;
     }
 
 }

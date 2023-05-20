@@ -50,12 +50,4 @@ public class RoomsController {
     public int getLightingPowerForRoom(@PathVariable int id) {
         return repository.getRoomById(id).getLightingPower();
     }
-
-
-    @RequestMapping(value = "/{id}/exceeding", 
-        method = RequestMethod.GET, params = {"heating_energy"})
-    public String isRoomExceeding(@PathVariable int id,
-    @RequestParam(value = "heating_energy") int heating_energy) {
-        return "Is room with: " + id + " exceeding heating energy: " + heating_energy;
-    }
 }

@@ -1,4 +1,5 @@
 package pl.put.poznan.building.rest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.classes.Building;
@@ -55,10 +56,12 @@ public class BuildingsController {
         return "getLightingPower for Building with id: " + id;
     }
 
-    @RequestMapping(value = "/{id}/rooms_exceeding", 
-        method = RequestMethod.GET, params = {"heating_energy"})
-    public String getRoomsExceedingHeatingEnergyForBuilding(@PathVariable int id,
-    @RequestParam(value = "heating_energy") int heating_energy) {
-        return "Get rooms in Building id: " + id + " exceeding heating energy: " + heating_energy;
+    @RequestMapping(value = "/{id}/rooms_exceeding/{limit}",
+            method = RequestMethod.GET)
+    public Object[] getRoomsExceedingHeatingEnergyForBuilding(@PathVariable int id, @PathVariable(value = "limit") int heatingEnergyLimit) {
+        return repository.getBuildingById(id).getRoomsExceedingHeatingEnergy(heatingEnergyLimit)
+                .stream()
+                .map(LocationDto::new)
+                .toArray();
     }
 }
