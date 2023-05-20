@@ -36,28 +36,28 @@ public class LevelsController {
     }
 
     @RequestMapping(value = "/{id}/area", method = RequestMethod.GET)
-    public String getAreaForLevel(@PathVariable int id) {
-        return "getArea for Level with id: " + id;
+    public int getAreaForLevel(@PathVariable int id) {
+        return repository.getLevelById(id).getArea();
     }
 
     @RequestMapping(value = "/{id}/volume", method = RequestMethod.GET)
-    public String getVolumeForLevel(@PathVariable int id) {
-        return "getVolume for Level with id: " + id;
+    public float getVolumeForLevel(@PathVariable int id) {
+        return repository.getLevelById(id).getVolume();
     }
 
     @RequestMapping(value = "/{id}/heating_energy", method = RequestMethod.GET)
-    public String getHeatingEnergyForLevel(@PathVariable int id) {
-        return "getHeatingEnergy for Level with id: " + id;
+    public float getHeatingEnergyForLevel(@PathVariable int id) {
+        return repository.getLevelById(id).getHeatingEnergy();
     }
 
     @RequestMapping(value = "/{id}/lighting_power", method = RequestMethod.GET)
-    public String getLightingPowerForLevel(@PathVariable int id) {
-        return "getLightingPower for Level with id: " + id;
+    public int getLightingPowerForLevel(@PathVariable int id) {
+        return repository.getLevelById(id).getLightingPower();
     }
 
     @RequestMapping(value = "/{id}/rooms_exceeding", 
         method = RequestMethod.GET, params = {"heating_energy"})
-    public String getRoomsExeceedingHeatingEnergyForLevel(@PathVariable int id,
+    public String getRoomsExceedingHeatingEnergyForLevel(@PathVariable int id,
     @RequestParam(value = "heating_energy") int heating_energy) {
         return "Get rooms in Level id: " + id + " exceeding heating energy: " + heating_energy;
     }
