@@ -2,7 +2,6 @@ package pl.put.poznan.building.app;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -12,12 +11,11 @@ import pl.put.poznan.building.classes.Building;
 import pl.put.poznan.building.classes.Level;
 import pl.put.poznan.building.classes.Room;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-
+/**
+ * This is the main class of the application.
+ */
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.building.rest"})
 public class BuildingInfoApplication {
 
@@ -25,6 +23,10 @@ public class BuildingInfoApplication {
         SpringApplication.run(BuildingInfoApplication.class, args);
     }
 
+
+    /**
+     * This method loads data from json file.
+     */
     @EventListener(ApplicationReadyEvent.class)
     public void loadJson(){
         ObjectMapper mapper = new ObjectMapper();
