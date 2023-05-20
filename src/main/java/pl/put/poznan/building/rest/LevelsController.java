@@ -54,11 +54,4 @@ public class LevelsController {
     public float getLightingPowerForLevel(@PathVariable int id) {
         return repository.getLevelById(id).getLightingPower();
     }
-
-    @RequestMapping(value = "/{id}/rooms_exceeding", 
-        method = RequestMethod.GET, params = {"heating_energy"})
-    public String getRoomsExceedingHeatingEnergyForLevel(@PathVariable int id,
-    @RequestParam(value = "heating_energy") int heating_energy) {
-        return "Get rooms in Level id: " + id + " exceeding heating energy: " + heating_energy;
-    }
 }

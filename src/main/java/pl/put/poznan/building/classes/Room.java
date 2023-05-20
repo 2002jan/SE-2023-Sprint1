@@ -1,7 +1,7 @@
 package pl.put.poznan.building.classes;
 
-import java.util.HashMap;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Room extends Location {
 
@@ -42,7 +42,9 @@ public class Room extends Location {
 
     @Override
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
-        return null; //TODO: implement logic
+        return getHeatingEnergy() / getVolume() > limit
+                ? List.of(this)
+                : null;
     }
 
 
