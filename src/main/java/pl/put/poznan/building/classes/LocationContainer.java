@@ -41,14 +41,16 @@ public abstract class LocationContainer extends Location {
                 .mapToDouble(Location::getHeatingEnergy)
                 .sum();
 
-        return (float) energy;
+        return ((float) energy) / locations.size();
     }
 
-    public int getLightingPower() {
+    public float getLightingPower() {
 
-        return locations.stream()
-                .mapToInt(Location::getLightingPower)
+        double power = locations.stream()
+                .mapToDouble(Location::getLightingPower)
                 .sum();
+
+        return ((float) power) / locations.size();
     }
 
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {

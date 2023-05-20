@@ -19,7 +19,7 @@ public abstract class Location {
 
     public abstract float getHeatingEnergy();
 
-    public abstract int getLightingPower();
+    public abstract float getLightingPower();
 
     public abstract List<Room> getRoomsExceedingHeatingEnergy(float limit);
 

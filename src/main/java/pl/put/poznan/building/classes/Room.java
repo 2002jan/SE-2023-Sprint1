@@ -32,12 +32,12 @@ public class Room extends Location {
 
     @Override
     public float getHeatingEnergy() {
-        return heating;
+        return heating / getVolume();
     }
 
     @Override
-    public int getLightingPower() {
-        return lighting;
+    public float getLightingPower() {
+        return (float) lighting / getArea();
     }
 
     @Override

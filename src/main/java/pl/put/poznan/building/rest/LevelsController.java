@@ -51,7 +51,7 @@ public class LevelsController {
     }
 
     @RequestMapping(value = "/{id}/lighting_power", method = RequestMethod.GET)
-    public int getLightingPowerForLevel(@PathVariable int id) {
+    public float getLightingPowerForLevel(@PathVariable int id) {
         return repository.getLevelById(id).getLightingPower();
     }
 
