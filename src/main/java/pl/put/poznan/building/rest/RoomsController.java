@@ -47,7 +47,7 @@ public class RoomsController {
     }
 
     @RequestMapping(value = "/{id}/lighting_power", method = RequestMethod.GET)
-    public int getLightingPowerForRoom(@PathVariable int id) {
+    public float getLightingPowerForRoom(@PathVariable int id) {
         return repository.getRoomById(id).getLightingPower();
     }
 

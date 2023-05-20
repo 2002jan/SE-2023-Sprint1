@@ -36,7 +36,7 @@ public class Room extends Location {
     }
 
     @Override
-    public int getLightingPower() {
+    public float getLightingPower() {
         return lighting;
     }
 
