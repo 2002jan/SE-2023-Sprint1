@@ -1,0 +1,7 @@
+pl.put.poznan.building.app
+pl.put.poznan.building.classes
+pl.put.poznan.building.dto
+pl.put.poznan.building.rest
+pl.put.poznan.building.rest.exceptions
+pl.put.poznan.building.rest.exceptions.models
+pl.put.poznan.building.rest.repositories
