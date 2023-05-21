@@ -43,16 +43,27 @@ public class Room extends Location {
         return cube;
     }
 
+    /**
+     * @return heating energy per cubic meter
+     */
     @Override
     public float getHeatingEnergy() {
         return heating / getVolume();
     }
 
+    /**
+     * @return lighting power per square meter
+     */
     @Override
     public float getLightingPower() {
         return (float) lighting / getArea();
     }
 
+
+    /**
+     * @param limit heating energy limit
+     * @return list containing this room if it exceeds limit or null otherwise
+     */
     @Override
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
         return getHeatingEnergy() / getVolume() > limit

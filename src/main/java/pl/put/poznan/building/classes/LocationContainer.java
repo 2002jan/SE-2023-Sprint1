@@ -36,6 +36,9 @@ public abstract class LocationContainer extends Location {
     }
 
 
+    /**
+     * @return summed area for all locations that are inside a given location container
+     */
     public int getArea() {
 
         return locations.stream()
@@ -43,6 +46,9 @@ public abstract class LocationContainer extends Location {
                 .sum();
     }
 
+    /**
+     * @return summed volume for all locations that are inside a given location container
+     */
     public int getVolume() {
 
         return locations.stream()
@@ -50,6 +56,11 @@ public abstract class LocationContainer extends Location {
                 .sum();
     }
 
+
+    /**
+     *
+     * @return average heating energy per cubic meter of a given location container
+     */
     public float getHeatingEnergy() {
         double energy = locations.stream()
                 .mapToDouble(Location::getHeatingEnergy)
@@ -58,6 +69,11 @@ public abstract class LocationContainer extends Location {
         return ((float) energy) / locations.size();
     }
 
+
+    /**
+     *
+     * @return average lighting power per square meter of a given location container
+     */
     public float getLightingPower() {
 
         double power = locations.stream()
