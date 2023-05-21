@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"pl.put.poznan.building.app"},{"l":"pl.put.poznan.building.classes"},{"l":"pl.put.poznan.building.dto"},{"l":"pl.put.poznan.building.rest"},{"l":"pl.put.poznan.building.rest.exceptions"},{"l":"pl.put.poznan.building.rest.exceptions.models"},{"l":"pl.put.poznan.building.rest.repositories"}]

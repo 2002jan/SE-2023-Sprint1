@@ -31,7 +31,9 @@ public abstract class LocationContainer extends Location {
         locations.add(location);
     }
 
-
+    /**
+     * @return Unmodifiable list of all locations that are part of this LocationContainer
+     */
     public List<Location> getLocations() {
         return Collections.unmodifiableList(locations);
     }
