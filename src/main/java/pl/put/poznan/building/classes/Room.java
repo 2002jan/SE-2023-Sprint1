@@ -42,7 +42,7 @@ public class Room extends Location {
 
     @Override
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
-        return getHeatingEnergy() / getVolume() > limit
+        return getHeatingEnergy() > limit
                 ? List.of(this)
                 : null;
     }
