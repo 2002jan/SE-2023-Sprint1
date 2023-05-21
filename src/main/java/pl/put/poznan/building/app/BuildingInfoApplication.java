@@ -13,7 +13,9 @@ import pl.put.poznan.building.classes.Room;
 
 import java.io.IOException;
 
-
+/**
+ * Main class of the application.
+ */
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.building.rest"})
 public class BuildingInfoApplication {
 
@@ -21,6 +23,9 @@ public class BuildingInfoApplication {
         SpringApplication.run(BuildingInfoApplication.class, args);
     }
 
+    /**
+     * Loading data from JSON file.
+     */
     @EventListener(ApplicationReadyEvent.class)
     public void loadJson(){
         ObjectMapper mapper = new ObjectMapper();
