@@ -5,15 +5,28 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Class representing a location container
+ * It is treated as a container in composite design pattern
+ */
 public abstract class LocationContainer extends Location {
 
     private final List<Location> locations = new ArrayList<>();
 
+    /**
+     * Constructor of LocationContainer
+     * @param id id of the location
+     * @param name name of the location
+     */
     public LocationContainer(int id, String name) {
         super(id, name);
     }
 
 
+    /**
+     * Adds a location to the container
+     * @param location location to be added
+     */
     protected void addLocation(Location location) {
         locations.add(location);
     }
@@ -24,6 +37,9 @@ public abstract class LocationContainer extends Location {
     }
 
 
+    /**
+     * @return summed area for all locations that are inside a given location container
+     */
     public int getArea() {
 
         return locations.stream()
@@ -31,6 +47,9 @@ public abstract class LocationContainer extends Location {
                 .sum();
     }
 
+    /**
+     * @return summed volume for all locations that are inside a given location container
+     */
     public int getVolume() {
 
         return locations.stream()
@@ -38,6 +57,11 @@ public abstract class LocationContainer extends Location {
                 .sum();
     }
 
+
+    /**
+     *
+     * @return average heating energy per cubic meter of a given location container
+     */
     public float getHeatingEnergy() {
         double energy = locations.stream()
                 .mapToDouble(Location::getHeatingEnergy)
@@ -46,6 +70,11 @@ public abstract class LocationContainer extends Location {
         return ((float) energy) / locations.size();
     }
 
+
+    /**
+     *
+     * @return average lighting power per square meter of a given location container
+     */
     public float getLightingPower() {
 
         double power = locations.stream()
@@ -55,6 +84,10 @@ public abstract class LocationContainer extends Location {
         return ((float) power) / locations.size();
     }
 
+    /**
+     * Returns a list of rooms exceeding the heating energy limit
+     * @param limit heating energy limit
+     */
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
         List<Room> roomsExceeding = new ArrayList<>();
 

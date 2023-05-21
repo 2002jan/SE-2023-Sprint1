@@ -1,8 +1,12 @@
 package pl.put.poznan.building.classes;
 
-import java.lang.reflect.Array;
+
 import java.util.*;
 
+/**
+ * This class represents a room in a building.
+ * In the composite design pattern, it is a leaf.
+ */
 public class Room extends Location {
 
     public static HashMap<Integer, Room> roomMap = new HashMap<>();
@@ -12,6 +16,15 @@ public class Room extends Location {
     private float heating;
     private int lighting;
 
+    /**
+     * Constructor for Room class.
+     * @param id identifier of the room
+     * @param name name of the room
+     * @param area area of the room in square meters
+     * @param cube volume of the room in cubic meters
+     * @param heating heating energy of the room (per cubic meter)
+     * @param lighting lighting power of the room (per square meter)
+     */
     public Room(int id, String name, int area, int cube, float heating, int lighting) {
         super(id, name);
         this.area = area;
@@ -30,16 +43,27 @@ public class Room extends Location {
         return cube;
     }
 
+    /**
+     * @return heating energy per cubic meter
+     */
     @Override
     public float getHeatingEnergy() {
         return heating / getVolume();
     }
 
+    /**
+     * @return lighting power per square meter
+     */
     @Override
     public float getLightingPower() {
         return (float) lighting / getArea();
     }
 
+
+    /**
+     * @param limit heating energy limit
+     * @return list containing this room if it exceeds limit or null otherwise
+     */
     @Override
     public List<Room> getRoomsExceedingHeatingEnergy(float limit) {
         return getHeatingEnergy() > limit
