@@ -1,6 +1,7 @@
 package pl.put.poznan.building.classes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,8 +19,8 @@ public abstract class LocationContainer extends Location {
     }
 
 
-    protected List<Location> getLocations() {
-        return locations;
+    public List<Location> getLocations() {
+        return Collections.unmodifiableList(locations);
     }
 
 

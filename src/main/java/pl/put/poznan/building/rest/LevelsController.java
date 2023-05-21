@@ -31,8 +31,12 @@ public class LevelsController {
     }
 
     @RequestMapping(value = "/{id}/rooms", method = RequestMethod.GET)
-    public String getRoomsFromLevel(@PathVariable int id) {
-        return "All rooms from level: " + id;
+    public Object[] getRoomsFromLevel(@PathVariable int id) {
+        return repository.getLevelById(id)
+                .getLocations()
+                .stream()
+                .map(LocationDto::new)
+                .toArray();
     }
 
     @RequestMapping(value = "/{id}/area", method = RequestMethod.GET)
