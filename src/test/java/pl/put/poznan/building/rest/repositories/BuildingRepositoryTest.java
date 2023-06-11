@@ -10,6 +10,8 @@ import pl.put.poznan.building.classes.Building;
 import pl.put.poznan.building.classes.Level;
 import pl.put.poznan.building.classes.Room;
 import pl.put.poznan.building.rest.exceptions.models.BuildingNotFoundException;
+import pl.put.poznan.building.rest.exceptions.models.LevelNotFoundException;
+import pl.put.poznan.building.rest.exceptions.models.RoomNotFoundException;
 
 import java.util.HashMap;
 
@@ -54,22 +56,41 @@ public class BuildingRepositoryTest {
 
     @Test
     void getLevelById() {
-        //TODO: Implement
+
+        Level level = new Level(1, "name");
+
+        when(levelMap.containsKey(anyInt())).thenReturn(true);
+        when(levelMap.get(anyInt())).thenReturn(level);
+
+        assertEquals(level, buildingRepository.getLevelById(1));
     }
 
     @Test
     void levelNotFoundException() {
-        //TODO: Implement
+
+        when(levelMap.containsKey(anyInt())).thenReturn(false);
+
+        assertThrows(LevelNotFoundException.class, () -> buildingRepository.getLevelById(1));
+
     }
 
     @Test
     void getRoomById() {
-        //TODO: Implement
+
+        Room room = new Room(1, "name", 15, 25, 1, 11);
+
+        when(roomMap.containsKey(anyInt())).thenReturn(true);
+        when(roomMap.get(anyInt())).thenReturn(room);
+
+        assertEquals(room, buildingRepository.getRoomById(1));
     }
 
     @Test
     void roomNotFoundException() {
-        //TODO: Implement
+
+        when(roomMap.containsKey(anyInt())).thenReturn(false);
+
+        assertThrows(RoomNotFoundException.class, () -> buildingRepository.getRoomById(1));
     }
 
 }
