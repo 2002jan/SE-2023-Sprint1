@@ -7,6 +7,9 @@ import java.util.HashMap;
  */
 public class Level extends LocationContainer {
 
+    /**
+     * Stores all levels mapped by their IDs
+     */
     public static HashMap<Integer, Level> levelMap = new HashMap<>();
 
     /**

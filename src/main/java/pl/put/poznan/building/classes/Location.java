@@ -7,7 +7,14 @@ import java.util.List;
  */
 public abstract class Location {
 
+    /**
+     * Stores location's id
+     */
     private final int id;
+
+    /**
+     * Stores location's name
+     */
     private final String name;
 
 

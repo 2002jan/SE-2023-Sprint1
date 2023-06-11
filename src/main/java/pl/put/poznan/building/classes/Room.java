@@ -9,11 +9,29 @@ import java.util.*;
  */
 public class Room extends Location {
 
+    /**
+     * Stores all rooms mapped by their IDs
+     */
     public static HashMap<Integer, Room> roomMap = new HashMap<>();
 
+    /**
+     * Room's area
+     */
     private int area;
+
+    /**
+     * Room's volume
+     */
     private int cube;
+
+    /**
+     * Room's heating energy
+     */
     private float heating;
+
+    /**
+     * Room's lighting power
+     */
     private int lighting;
 
     /**
