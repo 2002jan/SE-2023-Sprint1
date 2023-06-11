@@ -16,6 +16,10 @@ import pl.put.poznan.building.rest.exceptions.models.RoomNotFoundException;
  */
 @Service
 public class BuildingRepository {
+
+    /**
+     * Stores application logger
+     */
     private static Logger logger = LoggerFactory.getLogger(Room.class);
 
     /**

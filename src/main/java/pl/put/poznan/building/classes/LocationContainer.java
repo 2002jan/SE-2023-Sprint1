@@ -11,6 +11,9 @@ import java.util.Optional;
  */
 public abstract class LocationContainer extends Location {
 
+    /**
+     * Stores list of locations contained by this container
+     */
     private final List<Location> locations = new ArrayList<>();
 
     /**

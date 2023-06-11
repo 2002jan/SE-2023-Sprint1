@@ -8,6 +8,9 @@ import java.util.HashMap;
  */
 public class Building extends LocationContainer {
 
+    /**
+     * Stores all buildings mapped by their IDs
+     */
     public static HashMap<Integer, Building> buildingMap = new HashMap<>();
 
     /**
