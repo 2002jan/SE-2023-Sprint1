@@ -1,5 +1,5 @@
 # Building Info
-## SE-2023-Sprint1
+## SE-2023-Sprint
 
 ![verification workflow](https://github.com/2002jan/SE-2023-Sprint1/actions/workflows/ci.yml/badge.svg)
 
